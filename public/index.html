@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>TinyLink</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="/css/styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <h1><a href="/">TinyLink</a></h1>
+  </header>
+
+  <main class="container">
+    <!-- CREATE CARD -->
+    <section class="card">
+      <h2>Create Short Link</h2>
+
+      <div id="statusBox" class="status" style="display:none"></div>
+
+      <form id="createForm" novalidate>
+        <label>URL</label>
+        <input id="urlInput" name="url" placeholder="https://example.com" required />
+
+        <div class="hint">Enter full URL including http/https</div>
+
+        <label>Custom code (optional)</label>
+        <input id="codeInput" name="code" placeholder="6-8 characters (A-Za-z0-9)" />
+
+        <div class="form-row">
+          <button id="createBtn" class="btn" type="submit">Create</button>
+          <div id="formMessage" class="muted" aria-live="polite"></div>
+        </div>
+      </form>
+    </section>
+
+    <!-- LINKS / TABLE -->
+    <section class="card">
+      <div class="card-header">
+        <h2>Your Links</h2>
+        <div class="controls">
+          <input id="searchInput" placeholder="Search by code or url" />
+          <div class="small-muted" id="tableInfo"></div>
+        </div>
+      </div>
+
+      <table id="linksTable" aria-live="polite">
+        <thead>
+  <tr>
+    <th data-sort="code" class="sortable">Code <span class="sort-indicator"></span></th>
+    <th>URL</th>
+    <th data-sort="clicks" class="sortable">Clicks <span class="sort-indicator"></span></th>
+    <th>Created</th>
+    <th>Last Clicked</th>
+    <th>Actions</th>
+  </tr>
+        </thead>
+
+        <tbody></tbody>
+      </table>
+
+      <div id="emptyState" class="muted" style="display:none; text-align:center; padding:18px;">
+        No links yet. Create one from the form above.
+      </div>
+    </section>
+  </main>
+
+  <script src="/js/main.js"></script>
+</body>
+</html>

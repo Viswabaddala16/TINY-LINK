@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>TinyLink Stats</title>
+  <meta name="viewport" content="width=device-width" />
+  <link rel="stylesheet" href="/css/styles.css" />
+</head>
+
+<body>
+  <header class="site-header">
+    <h1><a href="/">TinyLink</a></h1>
+  </header>
+
+  <main class="container">
+    <section class="card">
+      <h2>Check Stats</h2>
+
+      <div id="statusBoxCode" class="status" style="display:none"></div>
+
+      <form id="lookupForm" novalidate>
+        <label>Code</label>
+        <input id="lookupCode" name="code" required />
+        <div class="form-row">
+          <button id="lookupBtn" class="btn" type="submit">Lookup</button>
+          <div id="lookupMessage" class="muted"></div>
+        </div>
+      </form>
+
+      <div id="result" style="margin-top: 20px;"></div>
+    </section>
+  </main>
+
+  <script src="/js/code.js"></script>
+</body>
+</html>
